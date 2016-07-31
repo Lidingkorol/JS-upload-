@@ -28,3 +28,24 @@ upload组件支持IE10以上及firefox，chrome浏览器
 		}
         }
 #以上是readme所有内容
+
+#总体思路正确
+优化点：
+1：iframe+form不需要用户自己写，用JS自动生成
+2：不要让用户改你的JS代码，一旦JS模块化，用户是没有权限改JS插件代码的
+建议：
+upload初始化的几个参数的建议
+```html
+<script>
+var upload=new Upload({
+	target:'element',
+	accept:'img',
+	multiple:true,
+	url:'url',
+	success:function(){},
+	error:function(){}
+})
+</script>
+```
+最后
+关于IE9不支持的问题，用iframe+form组合来上传文件，至于本地无法设置domain的问题，先把这个功能完善，做好了我放我公司服务器跑一遍。
